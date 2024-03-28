@@ -15,7 +15,7 @@ function App() {
     setIsDisabled(true);
     setInput("");
     try {
-      const response_api = await fetch("http://34.0.240.20:5000/post_json", {
+      const response_api = await fetch(process.env.VM_IP, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ context: response, user_question: faq }),
