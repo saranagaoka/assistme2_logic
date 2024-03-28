@@ -19,7 +19,6 @@ function App() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ context: response, user_question: faq }),
-        // body: JSON.stringify({ user_question: faq }),
       });
 
       const from_api = await response_api.json();
@@ -79,7 +78,7 @@ function App() {
           {response.map((resp) => (
             <>
               <User input={resp.user_question} />
-              {resp.your_previous_answer != "" ? (
+              {resp.your_previous_answer !== "" ? (
                 <Bot
                   response={resp.your_previous_answer}
                   setInput={setInput}
