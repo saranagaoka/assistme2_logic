@@ -1,0 +1,21 @@
+@import url("https://fonts.cdnfonts.com/css/old-computer-st");
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&family=Rock+3D&family=Rubik+Iso&family=Workbench&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&family=Rock+3D&family=Rubik+Iso&family=Silkscreen:wght@400;700&family=Workbench&display=swap");
+
+.messageResponse {
+  height: fit-content;
+  width: 85%;
+  background-color: #703cc940;
+  color: white;
+  display: flex;
+  border-radius: 4px;
+  flex-direction: column;
+  padding: 10px;
+  /* margin-left: 40px; */
+  /* font-family: 'Old computer St', sans-serif; */
+  /* font-family: "Workbench", sans-serif; */
+}
+
+.robot_name {
+  font-family: "Silkscreen", sans-serif;
+}
