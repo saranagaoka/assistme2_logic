@@ -1,12 +1,18 @@
 import ButtonSenDFAQ from "./ButtonSendFAQ";
 import "./message.css";
 
-function Bot({ response, setInput, send_input, isDisabled, questions = false }) {
+function Bot({
+  response,
+  setInput,
+  send_input,
+  isDisabled,
+  questions = false,
+}) {
   return (
     <div className="message">
       <div className="robot_name">@Llama_superhero</div>
       <div className="message_chat">{response}</div>
-      <div className="robot_questions">
+      {/* <div className="robot_questions">
         {questions ? (
           <ol>
             <li>
@@ -37,7 +43,7 @@ function Bot({ response, setInput, send_input, isDisabled, questions = false }) 
         ) : (
           <></>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

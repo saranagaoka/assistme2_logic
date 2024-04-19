@@ -11,11 +11,14 @@ function App() {
   const [isError, setIsError] = useState(false);
 
   const send_input = async (faq = input) => {
-    setResponse((prev) => [...prev, { user_question: faq, your_previous_answer: "" }]);
+    setResponse((prev) => [
+      ...prev,
+      { user_question: faq, your_previous_answer: "" },
+    ]);
     setIsDisabled(true);
     setInput("");
     try {
-      const response_api = await fetch("http://34.0.240.20:5000/post_json", {
+      const response_api = await fetch("http://127.0.0.1:5000/post_json", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ context: response, user_question: faq }),
@@ -24,7 +27,7 @@ function App() {
       const from_api = await response_api.json();
       setResponse((prev) => [
         ...prev.slice(0, prev.length - 1),
-        { user_question: faq, your_previous_answer: from_api.generated_text },
+        { user_question: faq, your_previous_answer: from_api.message },
       ]);
     } catch {
       setResponse((prev) => [
@@ -63,12 +66,14 @@ function App() {
       <div className="container_left">
         <div className="welcome_header">
           <div className="welcome_header_top">Welcome to</div>
-          <div className="welcome_header_bottom">Yet Another Super Llama Robot</div>
+          <div className="welcome_header_bottom">
+            Yet Another Super Llama Robot
+          </div>
         </div>
 
         <div className="form_container">
           <Bot
-            response="Hello! I'm you superhero to answer the questions about fibromyalgia. I have access to documents, based on which I can answer all your questions and explain as a kindergarden teacher! If you don't know what to ask, here you have most common questions:"
+            response="Hello! How can I assist you today with neurological disease-related questions?"
             setInput={setInput}
             send_input={send_input}
             isDisabled={isDisabled}
